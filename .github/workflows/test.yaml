@@ -24,6 +24,10 @@ jobs:
           - macos-latest
           - windows-latest
     runs-on: ${{ matrix.os }}
+    env:
+      HOST: 127.0.0.1
+      NODE_ENV: test
+      PORT: 3000
     steps:
       - uses: actions/checkout@v5
       - name: Set up Node.js
@@ -33,10 +37,9 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
-      - name: Run tests
+      - name: Print variables
         run: npx varlock load
+      - name: Run tests
+        run: npm test
         env:
-          HOST: 127.0.0.1
-          NODE_ENV: test
           NODE_OPTIONS: --test-reporter node-test-github-reporter
-          PORT: 3000
