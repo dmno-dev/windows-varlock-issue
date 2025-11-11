@@ -7,14 +7,14 @@
   "type": "module",
   "scripts": {
     "start": "node --experimental-strip-types server.ts",
-    "test": "node --test --experimental-strip-types test.spec.ts",
-    "test:ci": "start-test 3000"
+    "test": "node --test --experimental-strip-types test.spec.ts"
   },
   "devDependencies": {
     "@tsconfig/node-lts": "^22.0.2",
     "@tsconfig/node-ts": "^23.6.1",
     "@types/node": "^24.7.2",
-    "start-server-and-test": "^2.1.2",
+    "@types/supertest": "^6.0.3",
+    "supertest": "^7.1.4",
     "typescript": "^5.9.3"
   }
 }
