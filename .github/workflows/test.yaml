@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run tests
-        run: npm run test
+        run: npx varlock load
         env:
           HOST: localhost
           NODE_ENV: test
