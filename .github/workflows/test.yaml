@@ -52,7 +52,7 @@ jobs:
           node-version: 'lts/*'
           cache: 'npm'
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Print variables
         run: npx varlock load
       - name: Run tests
